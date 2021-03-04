@@ -22,7 +22,7 @@ namespace SmartSchool.WebAPI.Data
         public DbSet<Disciplina> Disciplinas { get; set; }        
         
         public DbSet<AlunoDisciplina> AlunoDisciplinas { get; set; }       
-
+ 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<AlunoDisciplina>()
