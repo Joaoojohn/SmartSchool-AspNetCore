@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SmartSchool.WebAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace SmartSchool.WebAPI
 {
@@ -33,14 +34,14 @@ namespace SmartSchool.WebAPI
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
 
-            //services.AddSingleton<IRepository, Repository>();
-            //services.AddTransient<IRepository, Repository>();
-            services.AddScoped<IRepository, Repository>();
-
-
             services.AddControllers()
-                    .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = 
-                                        Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+                    .AddNewtonsoftJson(opt => opt.SerializerSettings
+                    .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
+            services.AddScoped<IRepository, Repository>();                    
 
             services.AddSwaggerGen(c =>
             {

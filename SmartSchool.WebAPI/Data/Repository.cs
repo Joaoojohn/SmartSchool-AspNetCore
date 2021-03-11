@@ -17,7 +17,7 @@ namespace SmartSchool.WebAPI.Data
 
         public void Add<T>(T entity) where T : class
         {
-             _context.Add(entity);
+            _context.Add(entity);
         }
 
        public void Update<T>(T entity) where T : class
