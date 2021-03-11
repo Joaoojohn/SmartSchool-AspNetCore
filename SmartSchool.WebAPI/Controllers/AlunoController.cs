@@ -21,7 +21,7 @@ namespace SmartSchool.WebAPI.Controllers
             _repo = repo;
             _mapper = mapper;
         }
-
+        
         [HttpGet]
         public IActionResult Get()
         {
