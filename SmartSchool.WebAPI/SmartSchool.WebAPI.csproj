@@ -4,9 +4,8 @@
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-
-    <DocumentationFile>SmartSchool.WebAPI.xml</DocumentationFile>
-  
+      <DocumentationFile>SmartSchool.WebAPI.xml</DocumentationFile>
+      <NoWarn>1591</NoWarn>
    </PropertyGroup>
 
   <ItemGroup>

@@ -41,16 +41,11 @@ namespace SmartSchool.WebAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
-            services.AddScoped<IRepository, Repository>();                    
+            services.AddScoped<IRepository, Repository>();
 
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "SmartSchool.WebAPI", Version = "v1" });
-
-                var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
-
-                options.IncludeXmlComments(xmlCommentsFullPath);
             });
 
             
